@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import api from '../api/client';
+import founderImage from '../assets/bhupendra-founder-2.jpg';
+import creativeLeadImage from '../assets/Druhi.jpeg';
+import techLeadImage from '../assets/Shiva.png';
+import performanceMarketerImage from '../assets/Anisha.png';
+
 import {
   FaCheckCircle,
   FaQuoteLeft,
@@ -19,14 +24,13 @@ import {
   FaHeadset,
 } from 'react-icons/fa';
 
-// --- FALLBACK DATA (Will show if Admin Panel is empty) ---
 const fallbackAbout = {
-  badge: 'About Techvera',
+  badge: 'About GROWZYBYTES',
   title: 'We Build Growth Systems, Not Just Websites.',
   subtitle:
-    'Techvera is a modern digital growth agency helping brands scale with web development, app development, SEO, paid ads, funnels, automation and conversion-focused execution.',
+    'GROWZYBYTES is a modern digital growth agency helping brands scale with web development, app development, SEO, paid ads, funnels, automation and conversion-focused execution.',
   story:
-    'We started Techvera with one clear mission: help businesses grow faster with smart strategy, clean design, high-performing code and measurable marketing. Instead of treating development and marketing as separate services, we combine both so your brand gets one unified growth engine.',
+    'We started GROWZYBYTES with one clear mission: help businesses grow faster with smart strategy, clean design, high-performing code and measurable marketing. Instead of treating development and marketing as separate services, we combine both so your brand gets one unified growth engine.',
   founderNote:
     'Our focus is simple: clarity, speed, execution and real business outcomes. Every project we take on is built around lead generation, user experience and long-term scalability.',
   years: '5+',
@@ -123,7 +127,7 @@ const fallbackProcess = [
 const fallbackTimeline = [
   {
     year: '2021',
-    title: 'Techvera Started',
+    title: 'GROWZYBYTES Started',
     desc: 'Began with web development and local business marketing projects.',
   },
   {
@@ -145,31 +149,27 @@ const fallbackTimeline = [
 
 const fallbackTeam = [
   {
-    name: 'Bhupendra',
+    name: 'Bhupendra Verma',
     role: 'Founder & Growth Strategist',
-    image:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80',
+    image: founderImage,
     bio: 'Leads strategy, growth planning and client success across development and marketing.',
   },
   {
     name: 'Creative Lead',
     role: 'UI/UX & Brand Design',
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80',
+    image: creativeLeadImage,
     bio: 'Designs modern interfaces, landing pages and visual systems that improve trust and conversion.',
   },
   {
     name: 'Tech Lead',
     role: 'Web & App Development',
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80',
+    image: techLeadImage,
     bio: 'Builds fast, scalable products using modern frontend and backend technologies.',
   },
   {
     name: 'Performance Marketer',
     role: 'Ads & Analytics',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=700&q=80',
+    image: performanceMarketerImage,  
     bio: 'Handles paid media, conversion tracking, reporting and campaign optimization.',
   },
 ];
@@ -179,7 +179,7 @@ const fallbackTestimonials = [
     name: 'Ankit Sharma',
     company: 'D2C Brand Founder',
     quote:
-      'Techvera helped us improve both our website performance and our ad results. It felt like working with one smart in-house growth team.',
+      'GROWZYBYTES helped us improve both our website performance and our ad results. It felt like working with one smart in-house growth team.',
   },
   {
     name: 'Neha Gupta',
@@ -191,7 +191,7 @@ const fallbackTestimonials = [
     name: 'Rahul Verma',
     company: 'Local Services Business',
     quote:
-      'Our online presence completely changed after working with Techvera. Better design, better leads and better follow-up systems.',
+      'Our online presence completely changed after working with GROWZYBYTES. Better design, better leads and better follow-up systems.',
   },
 ];
 
@@ -224,18 +224,13 @@ const About = () => {
   };
 
   const renderStyledTitle = (title) => {
-    if (!title?.includes('Not Just')) {
-      return title;
-    }
-
+    if (!title?.includes('Not Just')) return title;
     const parts = title.split('Not Just');
-
     return (
       <>
         {parts[0]}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-          Not Just
-          {parts[1]}
+          Not Just{parts[1]}
         </span>
       </>
     );
@@ -244,52 +239,32 @@ const About = () => {
   useEffect(() => {
     const fetchAboutPageData = async () => {
       try {
-        const [aboutRes, teamRes, testimonialRes, pageImagesRes] =
-          await Promise.allSettled([
-            api.get('/about'),
-            api.get('/team'),
-            api.get('/testimonials'),
-            api.get('/pageImages'),
-          ]);
+        const [aboutRes, teamRes, testimonialRes, pageImagesRes] = await Promise.allSettled([
+          api.get('/about'),
+          api.get('/team'),
+          api.get('/testimonials'),
+          api.get('/pageImages'),
+        ]);
 
         if (aboutRes.status === 'fulfilled' && aboutRes.value?.data) {
           const data = aboutRes.value.data;
           setAboutData((prev) => ({ ...prev, ...data }));
-
-          if (Array.isArray(data.stats) && data.stats.length > 0) {
-            setStats(data.stats);
-          }
+          if (Array.isArray(data.stats) && data.stats.length > 0) setStats(data.stats);
         }
 
-        if (
-          teamRes.status === 'fulfilled' &&
-          Array.isArray(teamRes.value?.data) &&
-          teamRes.value.data.length > 0
-        ) {
+        if (teamRes.status === 'fulfilled' && Array.isArray(teamRes.value?.data) && teamRes.value.data.length > 0) {
           setTeam(teamRes.value.data);
         }
 
-        if (
-          testimonialRes.status === 'fulfilled' &&
-          Array.isArray(testimonialRes.value?.data) &&
-          testimonialRes.value.data.length > 0
-        ) {
+        if (testimonialRes.status === 'fulfilled' && Array.isArray(testimonialRes.value?.data) && testimonialRes.value.data.length > 0) {
           setTestimonials(testimonialRes.value.data);
         }
 
-        if (
-          pageImagesRes.status === 'fulfilled' &&
-          Array.isArray(pageImagesRes.value?.data)
-        ) {
+        if (pageImagesRes.status === 'fulfilled' && Array.isArray(pageImagesRes.value?.data)) {
           const aboutBanner = pageImagesRes.value.data.find(
-            (img) =>
-              img?.title?.toLowerCase() === 'about' ||
-              img?.page?.toLowerCase() === 'about'
+            (img) => img?.title?.toLowerCase() === 'about' || img?.page?.toLowerCase() === 'about'
           );
-
-          if (aboutBanner?.imageUrl) {
-            setBannerImg(aboutBanner.imageUrl);
-          }
+          if (aboutBanner?.imageUrl) setBannerImg(aboutBanner.imageUrl);
         }
       } catch (error) {
         console.error('About page fetch error:', error);
@@ -301,14 +276,15 @@ const About = () => {
     fetchAboutPageData();
   }, []);
 
+  const heroImg = bannerImg || fallbackHeroImage;
+  const teamFallback =
+    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80';
+
   return (
     <div className="min-h-screen bg-white font-sans overflow-hidden selection:bg-blue-600 selection:text-white">
-      {/* --- 1. HERO SECTION WITH DYNAMIC BACKGROUND --- */}
       <section
         className="relative text-white pt-32 pb-24 px-6 overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('${bannerImg || fallbackHeroImage}')`,
-        }}
+        style={{ backgroundImage: `url('${heroImg}')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-blue-950/85 to-slate-900/90 z-0"></div>
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] z-0"></div>
@@ -356,12 +332,10 @@ const About = () => {
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 group">
               <div className="absolute inset-0 bg-blue-600/20 group-hover:bg-transparent transition duration-500 z-10"></div>
               <img
-                src={
-                  bannerImg ||
-                  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80'
-                }
-                alt="Techvera team"
-                className="w-full h-[450px] md:h-[600px] object-cover transform group-hover:scale-105 transition duration-700"
+                src={heroImg}
+                alt="GROWZYBYTES workspace and team"
+                className="w-full h-[450px] md:h-[600px] object-cover object-center transform group-hover:scale-105 transition duration-700"
+                loading="eager"
               />
             </div>
 
@@ -382,7 +356,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* --- 2. STATS STRIP --- */}
       <section className="bg-blue-600 text-white py-16 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center relative z-10">
@@ -394,9 +367,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <h3 className="text-4xl md:text-6xl font-black mb-2">
-                {item.number}
-              </h3>
+              <h3 className="text-4xl md:text-6xl font-black mb-2">{item.number}</h3>
               <p className="text-blue-200 uppercase tracking-widest text-xs md:text-sm font-bold">
                 {item.label}
               </p>
@@ -405,15 +376,9 @@ const About = () => {
         </div>
       </section>
 
-      {/* --- 3. OUR STORY --- */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4 block">
               The Backstory
             </span>
@@ -423,9 +388,7 @@ const About = () => {
             <p className="text-lg text-slate-600 leading-relaxed mb-6 font-medium">
               {aboutData.story}
             </p>
-            <p className="text-slate-500 leading-relaxed mb-10">
-              {aboutData.founderNote}
-            </p>
+            <p className="text-slate-500 leading-relaxed mb-10">{aboutData.founderNote}</p>
 
             <ul className="space-y-5">
               {[
@@ -482,28 +445,20 @@ const About = () => {
                 <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-3xl mb-6">
                   {card.icon}
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-3">
-                  {card.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                  {card.desc}
-                </p>
+                <h3 className="text-2xl font-black text-slate-900 mb-3">{card.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed font-medium">{card.desc}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* --- 4. CORE VALUES --- */}
       <section className="py-24 px-6 bg-[#f8fafc] border-y border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900">
-              Our Core Values
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900">Our Core Values</h2>
             <p className="text-slate-500 mt-5 max-w-2xl mx-auto text-lg font-medium">
-              The principles that guide every strategy, every design and every
-              campaign we deliver.
+              The principles that guide every strategy, every design and every campaign we deliver.
             </p>
           </div>
 
@@ -523,29 +478,23 @@ const About = () => {
                 <div className="text-4xl text-blue-600 mb-6 bg-blue-50 w-20 h-20 flex justify-center items-center rounded-full group-hover:scale-110 transition duration-300">
                   {value.icon}
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {value.desc}
-                </p>
+                <h3 className="text-2xl font-black text-slate-900 mb-4">{value.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* --- 5. SERVICES & INDUSTRIES --- */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-5 gap-12 lg:gap-16">
           <div className="xl:col-span-3">
             <div className="mb-12">
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-                What Techvera Brings to the Table
+                What GROWZYBYTES Brings to the Table
               </h2>
               <p className="text-slate-600 text-lg max-w-2xl font-medium">
-                We merge development, design and growth marketing so your brand
-                gets one connected execution team.
+                We merge development, design and growth marketing so your brand gets one connected execution team.
               </p>
             </div>
 
@@ -565,12 +514,8 @@ const About = () => {
                   <div className="text-4xl text-blue-600 mb-5 group-hover:scale-110 transition origin-left">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-black text-slate-900 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">
-                    {service.desc}
-                  </p>
+                  <h3 className="text-xl font-black text-slate-900 mb-3">{service.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{service.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -585,12 +530,9 @@ const About = () => {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full blur-[80px] opacity-20"></div>
 
-            <h3 className="text-3xl font-black mb-6 relative z-10">
-              Industries We Scale
-            </h3>
+            <h3 className="text-3xl font-black mb-6 relative z-10">Industries We Scale</h3>
             <p className="text-slate-400 mb-10 relative z-10 text-lg">
-              We work with growth-minded brands that demand better systems,
-              stronger positioning and measurable outcomes.
+              We work with growth-minded brands that demand better systems, stronger positioning and measurable outcomes.
             </p>
 
             <div className="flex flex-wrap gap-3 relative z-10">
@@ -612,24 +554,20 @@ const About = () => {
                 to="/contact"
                 className="inline-flex items-center font-black text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-full transition shadow-lg shadow-blue-500/30"
               >
-                Talk to Techvera <FaArrowRight className="ml-2" />
+                Talk to GROWZYBYTES <FaArrowRight className="ml-2" />
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* --- 6. PROCESS --- */}
       <section className="py-24 px-6 bg-slate-950 text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-white">
-              How We Work
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white">How We Work</h2>
             <p className="text-slate-400 mt-5 max-w-2xl mx-auto text-lg">
-              Our proven workflow keeps strategy, design, development and growth
-              perfectly aligned from day one.
+              Our proven workflow keeps strategy, design, development and growth perfectly aligned from day one.
             </p>
           </div>
 
@@ -652,28 +590,20 @@ const About = () => {
                 <div className="text-sm font-black tracking-widest text-blue-400 mb-4 uppercase">
                   STEP {item.step}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  {item.title}
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
+                <h3 className="text-2xl font-bold mb-4 text-white">{item.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* --- 7. TIMELINE --- */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900">
-              Our Journey
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900">Our Journey</h2>
             <p className="text-slate-500 mt-5 text-lg">
-              How Techvera evolved from service execution to complete growth
-              systems.
+              How GROWZYBYTES evolved from service execution to complete growth systems.
             </p>
           </div>
 
@@ -693,14 +623,10 @@ const About = () => {
                 <div className="hidden md:block w-[110px] shrink-0 text-right pr-8 text-3xl font-black text-blue-600 pt-1">
                   {item.year}
                 </div>
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-600 text-slate-500 shadow shrink-0 z-10 ml-0 md:ml-0 md:mr-8 md:group-odd:ml-8 md:group-odd:mr-0"></div>
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-600 shrink-0 z-10 ml-0 md:ml-0 md:mr-8 md:group-odd:ml-8 md:group-odd:mr-0"></div>
                 <div className="w-[calc(100%-3rem)] md:w-[calc(50%-4rem)] bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-xl transition -mt-2">
-                  <div className="md:hidden text-2xl font-black text-blue-600 mb-2">
-                    {item.year}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
-                    {item.title}
-                  </h3>
+                  <div className="md:hidden text-2xl font-black text-blue-600 mb-2">{item.year}</div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
                   <p className="text-slate-500 font-medium">{item.desc}</p>
                 </div>
               </motion.div>
@@ -709,16 +635,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* --- 8. TEAM (Dynamic) --- */}
       <section className="py-24 px-6 bg-[#f8fafc] border-y border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900">
-              Meet the Engine
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900">Meet the Engine</h2>
             <p className="text-slate-500 mt-5 max-w-2xl mx-auto text-lg">
-              The strategists, developers, and marketers executing your
-              day-to-day growth.
+              The strategists, developers, and marketers executing your day-to-day growth.
             </p>
           </div>
 
@@ -740,28 +662,22 @@ const About = () => {
                   variants={fadeUp}
                   className="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group"
                 >
-                  <div className="h-80 bg-slate-200 overflow-hidden relative">
+                  <div className="relative h-80 bg-slate-200 overflow-hidden">
                     <img
-                      src={
-                        member.image ||
-                        member.imageUrl ||
-                        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80'
-                      }
+                      src={member.image || member.imageUrl || teamFallback}
                       alt={member.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 transform group-hover:scale-105"
+                      className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition duration-500 transform group-hover:scale-105"
+                      loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent"></div>
                   </div>
                   <div className="p-8 text-center">
-                    <h3 className="text-2xl font-black text-slate-900">
-                      {member.name}
-                    </h3>
+                    <h3 className="text-2xl font-black text-slate-900">{member.name}</h3>
                     <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mt-2 mb-4">
                       {member.role}
                     </p>
                     <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                      {member.bio ||
-                        member.description ||
-                        'Dedicated to Techvera’s growth-first execution.'}
+                      {member.bio || member.description || 'Dedicated to GROWZYBYTES growth-first execution.'}
                     </p>
                   </div>
                 </motion.div>
@@ -771,16 +687,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* --- 9. TESTIMONIALS (Dynamic) --- */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900">
-              What Clients Say
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900">What Clients Say</h2>
             <p className="text-slate-500 mt-5 max-w-2xl mx-auto text-lg">
-              Long-term growth comes from trust, execution and outcomes that
-              clients can actually feel.
+              Long-term growth comes from trust, execution and outcomes that clients can actually feel.
             </p>
           </div>
 
@@ -802,9 +714,7 @@ const About = () => {
                   "{item.quote || item.message}"
                 </p>
                 <div className="pt-6 border-t border-slate-200">
-                  <h4 className="font-black text-slate-900 text-lg">
-                    {item.name}
-                  </h4>
+                  <h4 className="font-black text-slate-900 text-lg">{item.name}</h4>
                   <p className="text-sm text-blue-600 font-bold uppercase tracking-wide mt-1">
                     {item.company || item.role || 'Client'}
                   </p>
@@ -815,7 +725,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* --- 10. FINAL CTA --- */}
       <section className="py-32 px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -829,9 +738,7 @@ const About = () => {
             Ready to trigger your next phase of growth?
           </h2>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-            Whether you need a high-speed website, a scalable web app, or a
-            data-driven marketing funnel, Techvera is fully equipped to build it
-            with you.
+            Whether you need a high-speed website, a scalable web app, or a data-driven marketing funnel, GROWZYBYTES is fully equipped to build it with you.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-5">

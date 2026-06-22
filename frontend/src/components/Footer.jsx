@@ -59,7 +59,7 @@ const Footer = () => {
         {/* 1. Brand Section */}
         <motion.div variants={itemVars}>
           <Link to="/" className="inline-block text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 tracking-wider mb-6">
-            TECHVERA
+            GROWZYBYTES
           </Link>
           <p className="text-slate-400 mb-8 leading-relaxed text-sm">
             Your partner in digital growth. We build modern websites, drive traffic, and maximize your online potential through innovative tech solutions.
@@ -118,7 +118,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <FaEnvelope className="text-blue-500 mr-3 flex-shrink-0" />
-              <span>agencytechvera@gmail.com</span>
+              <span>GROWZYBYTES@gmail.com</span>
             </li>
           </ul>
           <Link to="/contact" className="inline-flex items-center mt-6 text-sm font-bold text-white bg-slate-800 hover:bg-blue-600 px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg">
@@ -158,7 +158,7 @@ const Footer = () => {
         transition={{ delay: 0.6, duration: 0.8 }}
         className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500"
       >
-        <p>&copy; {new Date().getFullYear()} Techvera Digital Agency. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} GROWZYBYTES. All rights reserved.</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <Link to="#" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
           <Link to="#" className="hover:text-blue-400 transition-colors">Terms of Service</Link>

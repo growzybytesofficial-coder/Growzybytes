@@ -184,7 +184,7 @@ const AdminDashboard = () => {
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.setAttribute('href', url);
-    a.setAttribute('download', `Techvera_${activeConfig.shortLabel}_${new Date().toISOString().split('T')[0]}.csv`);
+    a.setAttribute('download', `GROWZYBYTES_${activeConfig.shortLabel}_${new Date().toISOString().split('T')[0]}.csv`);
     a.click();
     setSuccessMsg('Data exported successfully!');
   };
@@ -609,7 +609,7 @@ const AdminDashboard = () => {
         <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-[280px] xl:w-[320px] bg-[#0A0F1C] text-white shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out ${mobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
           <div className="p-6 xl:p-8 border-b border-white/5 flex items-center justify-between shrink-0">
             <div>
-              <div className="text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">TECHVERA</div>
+              <div className="text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">GROWZYBYTES</div>
               <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-400 mt-1">Admin OS</div>
             </div>
             <button onClick={() => setMobileSidebarOpen(false)} className="lg:hidden w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-slate-300"><FaTimes /></button>

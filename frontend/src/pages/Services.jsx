@@ -321,7 +321,7 @@ const Services = () => {
   const faqs = [
     {
       q: 'Do you provide only marketing or development too?',
-      a: 'We handle both. Techvera covers web development, app development, SEO, paid ads, social media, content and conversion systems. This ensures your code and marketing are perfectly aligned.',
+      a: 'We handle both. GROWZYBYTES covers web development, app development, SEO, paid ads, social media, content and conversion systems. This ensures your code and marketing are perfectly aligned.',
     },
     {
       q: 'Can I start with one service and scale later?',
@@ -370,7 +370,7 @@ const Services = () => {
 
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
             From websites and apps to SEO, paid ads, content and automations —
-            Techvera helps brands scale with one unified execution team.
+            GROWZYBYTES helps brands scale with one unified execution team.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
@@ -515,7 +515,7 @@ const Services = () => {
               </h2>
               <p className="text-slate-500 text-lg font-medium">
                 Explore the core systems and specialized services available
-                through Techvera.
+                through GROWZYBYTES.
               </p>
             </div>
             <div className="text-sm font-bold bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm text-blue-600">
@@ -1001,7 +1001,7 @@ const Services = () => {
               to="/about"
               className="inline-flex items-center justify-center border-2 border-slate-500 hover:border-white text-white font-bold py-5 px-10 rounded-full transition duration-300 text-lg"
             >
-              Learn About Techvera
+              Learn About GROWZYBYTES
             </Link>
           </div>
         </motion.div>

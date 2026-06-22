@@ -31,7 +31,7 @@ const fallbackBlogs = [
     content:
       'A strong business website is no longer just about design. It needs clear messaging, fast loading speed, mobile responsiveness, SEO-friendly structure, trust elements, strategic CTAs and lead capture systems. Businesses that align design with conversion usually get better quality inquiries and stronger brand trust.',
     category: 'Web Development',
-    author: 'Techvera Team',
+    author: 'GROWZYBYTES Team',
     createdAt: '2026-02-10T10:00:00.000Z',
     tags: ['React', 'UI/UX', 'Conversion', 'Business Website'],
   },
@@ -41,7 +41,7 @@ const fallbackBlogs = [
     content:
       'SEO helps businesses attract high-intent visitors without depending only on paid ads. The basics include keyword targeting, technical site health, on-page optimization, content clarity, internal linking and user-focused structure. When done correctly, SEO compounds over time and improves long-term visibility.',
     category: 'SEO',
-    author: 'Techvera Team',
+    author: 'GROWZYBYTES Team',
     createdAt: '2026-02-18T09:30:00.000Z',
     tags: ['SEO', 'Organic Growth', 'Keywords', 'Content'],
   },
@@ -51,7 +51,7 @@ const fallbackBlogs = [
     content:
       'Both ad platforms can work, but the better choice depends on buyer intent, product type, sales cycle and creative strength. Google Ads usually captures demand while Meta Ads can help create demand. Businesses should first decide their goal, funnel stage and budget before choosing a platform.',
     category: 'Performance Marketing',
-    author: 'Techvera Team',
+    author: 'GROWZYBYTES Team',
     createdAt: '2026-02-25T12:00:00.000Z',
     tags: ['Meta Ads', 'Google Ads', 'PPC', 'Marketing'],
   },
@@ -61,7 +61,7 @@ const fallbackBlogs = [
     content:
       'Most users now browse on smaller screens first, which means every page must adapt smoothly across devices. Responsive design improves readability, accessibility, user confidence and engagement. It also reduces friction during navigation, which can positively affect conversion performance.',
     category: 'UI/UX',
-    author: 'Techvera Team',
+    author: 'GROWZYBYTES Team',
     createdAt: '2026-03-01T11:45:00.000Z',
     tags: ['Responsive Design', 'Mobile', 'UX', 'Frontend'],
   },
@@ -71,7 +71,7 @@ const fallbackBlogs = [
     content:
       'Content works best when it solves buyer questions, builds authority and moves readers toward the next action. Strong content marketing is not only about publishing blogs. It includes strategic landing page copy, thought leadership, educational posts and clear CTAs that connect traffic to business goals.',
     category: 'Content Marketing',
-    author: 'Techvera Team',
+    author: 'GROWZYBYTES Team',
     createdAt: '2026-03-04T08:10:00.000Z',
     tags: ['Content', 'Copywriting', 'Lead Generation', 'Sales'],
   },
@@ -81,7 +81,7 @@ const fallbackBlogs = [
     content:
       'A good digital funnel guides visitors from awareness to action through relevant messaging, landing pages, proof, offers and follow-up systems. Service businesses often improve lead quality by combining ads, trust-building content, conversion-focused pages and WhatsApp or email follow-up automations.',
     category: 'Lead Generation',
-    author: 'Techvera Team',
+    author: 'GROWZYBYTES Team',
     createdAt: '2026-03-06T07:15:00.000Z',
     tags: ['Funnels', 'Lead Generation', 'CRO', 'Automation'],
   },
@@ -326,7 +326,7 @@ const Blog = () => {
           className="max-w-5xl mx-auto text-center relative z-10"
         >
           <span className="inline-flex px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-200 text-xs md:text-sm uppercase tracking-[0.2em] font-semibold mb-6">
-            Techvera Blog
+            GROWZYBYTES Blog
           </span>
 
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
@@ -354,7 +354,7 @@ const Blog = () => {
               to="/contact"
               className="border border-gray-500 hover:border-white text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300"
             >
-              Work With Techvera
+              Work With GROWZYBYTES
             </Link>
           </div>
         </motion.div>
@@ -460,7 +460,7 @@ const Blog = () => {
                   Featured Articles
                 </h2>
                 <p className="text-gray-600 mt-2">
-                  Latest hand-picked reads from Techvera Insights.
+                  Latest hand-picked reads from GROWZYBYTES Insights.
                 </p>
               </div>
 

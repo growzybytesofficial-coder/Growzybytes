@@ -57,10 +57,10 @@ const Contact = () => {
   const contactCards = [
     {
       title: 'Email Us',
-      value: 'agencytechvera@gmail.com', // Changed to your real email
+      value: 'GROWZYBYTES@gmail.com', // Changed to your real email
       sub: 'Best for detailed project discussions',
       icon: <FaEnvelope />,
-      href: 'mailto:agencytechvera@gmail.com',
+      href: 'mailto:GROWZYBYTES@gmail.com',
     },
     {
       title: 'Call Us',
@@ -183,7 +183,7 @@ const Contact = () => {
 
         <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative z-10 max-w-5xl mx-auto text-center">
           <span className="inline-flex px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-200 text-xs md:text-sm uppercase tracking-[0.2em] font-semibold mb-6">
-            Contact Techvera
+            Contact GROWZYBYTES
           </span>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
             Apply For Your <span className="text-blue-400">Free Audit</span>
@@ -460,7 +460,7 @@ const Contact = () => {
             <button type="button" onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg py-4 px-10 rounded-full transition shadow-xl">
               Request Free Audit <FaArrowRight className="ml-3" />
             </button>
-            <a href="mailto:agencytechvera@gmail.com" className="inline-flex items-center justify-center border border-gray-500 hover:border-white text-white font-bold text-lg py-4 px-10 rounded-full transition">
+            <a href="mailto:GROWZYBYTES@gmail.com" className="inline-flex items-center justify-center border border-gray-500 hover:border-white text-white font-bold text-lg py-4 px-10 rounded-full transition">
               Email Us Directly
             </a>
           </div>

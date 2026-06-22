@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
         email.trim() === envEmail.trim() && 
         password.trim() === envPassword.trim()
     ) {
-      const secret = process.env.JWT_SECRET || 'TechveraSuperSecretKey2024';
+      const secret = process.env.JWT_SECRET || 'GROWZYBYTESSuperSecretKey2024';
       const token = jwt.sign(
         { role: 'admin', email }, 
         secret, 

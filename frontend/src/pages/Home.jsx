@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/client';
+import founderImage from '../assets/bhupendra-founder-2.jpg';
 import {
   FaRocket,
   FaChartLine,
@@ -141,8 +142,7 @@ const defaultCaseStudies = [
     category: 'Marketing',
     description:
       'Scaled monthly revenue from ₹5L to ₹25L using Meta dynamic ads and CRO strategies.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=80',
     liveLink: '',
   },
   {
@@ -150,8 +150,7 @@ const defaultCaseStudies = [
     category: 'SEO',
     description:
       'Ranked on page 1 for 15+ highly competitive real estate keywords in just 4 months.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
     liveLink: '',
   },
 ];
@@ -174,7 +173,7 @@ const Home = () => {
   const [quickEmail, setQuickEmail] = useState('');
   const [quickSubmitStatus, setQuickSubmitStatus] = useState('');
   const [activeFaq, setActiveFaq] = useState(null);
-  const [founderSrc, setFounderSrc] = useState('/founder.jpg');
+  const [founderSrc, setFounderSrc] = useState(founderImage);
 
   const fadeUp = useMemo(
     () => ({
@@ -218,9 +217,7 @@ const Home = () => {
 
         if (pageImagesRes.status === 'fulfilled' && Array.isArray(pageImagesRes.value?.data)) {
           const banner = pageImagesRes.value.data.find(
-            (img) =>
-              img?.title?.toLowerCase() === 'home' ||
-              img?.page?.toLowerCase() === 'home'
+            (img) => img?.title?.toLowerCase() === 'home' || img?.page?.toLowerCase() === 'home'
           );
 
           if (banner?.imageUrl || banner?.image) {
@@ -276,7 +273,6 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-slate-950/75 z-0"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-950/85 to-slate-900/90 z-0"></div>
-
         <div className="absolute top-0 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-blob z-0"></div>
         <div className="absolute top-10 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-blob animation-delay-2000 z-0"></div>
 
@@ -298,7 +294,7 @@ const Home = () => {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight leading-[1.1]">
             Scale Your Brand With <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-              Techvera
+              GROWZYBYTES
             </span>
           </h1>
 
@@ -371,13 +367,11 @@ const Home = () => {
             >
               {quickSubmitStatus === 'submitting' ? 'Sending...' : 'Submit'}
             </button>
-
             {quickSubmitStatus === 'success' && (
               <span className="absolute -bottom-6 right-2 text-emerald-500 text-xs font-bold">
                 Request received successfully!
               </span>
             )}
-
             {quickSubmitStatus === 'error' && (
               <span className="absolute -bottom-6 right-2 text-red-500 text-xs font-bold">
                 Failed. Try Contact Form.
@@ -406,7 +400,6 @@ const Home = () => {
               convert, or expensive ads sending traffic to a slow page. This creates a massive
               revenue leak.
             </p>
-
             <ul className="space-y-4">
               {[
                 'Spending thousands on Ads but getting low-quality leads.',
@@ -904,18 +897,17 @@ const Home = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto relative z-10"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
-            Stop Guessing. Start Growing.
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+            Ready to turn clicks into clients?
           </h2>
-          <p className="text-blue-100 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-            Book a no-obligation strategy call with our team to uncover your brand&apos;s true
-            revenue potential.
+          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+            Let&apos;s build a growth system that performs across web, search, paid media, and email.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center bg-white hover:bg-slate-900 hover:text-white text-slate-900 font-black py-5 px-12 rounded-full text-xl transition duration-300 shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+            className="inline-flex items-center bg-white text-blue-700 hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-2xl"
           >
-            Schedule Strategy Call <FaArrowRight className="ml-3" />
+            Start Your Project <FaArrowRight className="ml-2" />
           </Link>
         </motion.div>
       </section>

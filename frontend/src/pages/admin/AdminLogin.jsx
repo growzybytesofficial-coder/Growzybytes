@@ -17,7 +17,7 @@ import {
 } from 'react-icons/fa';
 
 const statusMessages = [
-  'Secure admin access for Techvera',
+  'Secure admin access for your business',
   'Manage projects, blogs, leads and content',
   'Fast, protected and responsive control panel',
 ];
@@ -163,7 +163,7 @@ const AdminLogin = () => {
               className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-blue-400/20 bg-blue-500/10 text-blue-200 text-sm font-semibold"
             >
               <FaShieldAlt className="text-blue-400" />
-              Techvera Admin Security
+              GROWZYBYTES Admin Security
             </motion.div>
 
             <div className="mt-10">
@@ -247,7 +247,7 @@ const AdminLogin = () => {
                 </div>
 
                 <p className="mt-4 text-blue-100">
-                  Access your dashboard and manage Techvera efficiently.
+                  Access your dashboard and manage your business efficiently.
                 </p>
               </div>
 
@@ -311,7 +311,7 @@ const AdminLogin = () => {
                         onChange={handleChange}
                         required
                         autoComplete="email"
-                        placeholder="admin@techvera.com"
+                        placeholder="admin@growzybytes.com"
                         className="w-full pl-11 pr-4 py-3.5 border border-slate-300 rounded-2xl bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 focus:outline-none transition"
                       />
                     </div>
@@ -398,7 +398,7 @@ const AdminLogin = () => {
                 </form>
 
                 <div className="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
-                  <span>Protected by Techvera auth flow</span>
+                  <span>Protected by  auth GROWZYBYTES flow</span>
                   <span>Admin only</span>
                 </div>
               </div>

@@ -12,7 +12,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'techvera_portfolio', // Is folder me images save hongi
+    folder: 'GROWZYBYTES_portfolio', // Is folder me images save hongi
     allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
   },
 });
