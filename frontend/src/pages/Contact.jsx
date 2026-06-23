@@ -57,28 +57,28 @@ const Contact = () => {
   const contactCards = [
     {
       title: 'Email Us',
-      value: 'GROWZYBYTES@gmail.com', // Changed to your real email
+      value: 'growzybytesofficial@gmail.com', // Changed to your real email
       sub: 'Best for detailed project discussions',
       icon: <FaEnvelope />,
-      href: 'mailto:GROWZYBYTES@gmail.com',
+      href: 'mailto:growzybytesofficial@gmail.com',
     },
     {
       title: 'Call Us',
-      value: '+91 90000 00000', // Update this to your real phone number!
+      value: '+91 8445892456', // Update this to your real phone number!
       sub: 'For direct project consultation',
       icon: <FaPhoneAlt />,
-      href: 'tel:+919000000000',
+      href: 'tel:+91 8445892456',
     },
     {
       title: 'WhatsApp',
-      value: '+91 90000 00000', // Update this to your real phone number!
+      value: '+91 8445892456', // Update this to your real phone number!
       sub: 'Quick support and follow-up',
       icon: <FaWhatsapp />,
-      href: 'https://wa.me/919000000000',
+      href: 'https://wa.me/918445892456',
     },
     {
       title: 'Office Location',
-      value: 'Cyber Hub, New Delhi',
+      value: 'GROWZYBYTES, Agra, India',
       sub: 'Serving brands across India',
       icon: <FaMapMarkerAlt />,
       href: '#',

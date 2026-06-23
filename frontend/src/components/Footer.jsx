@@ -110,7 +110,11 @@ const Footer = () => {
           <ul className="space-y-4 text-slate-400 text-sm">
             <li className="flex items-start">
               <FaMapMarkerAlt className="text-blue-500 mt-1 mr-3 flex-shrink-0 text-lg" />
-              <span>New Delhi, India</span>
+              <span>Agra, India</span>
+            </li>
+            <li className="flex items-center">
+              <FaPhoneAlt className="text-blue-500 mr-3 flex-shrink-0" />
+              <span>+91 8445892456</span>
             </li>
             <li className="flex items-center">
               <FaPhoneAlt className="text-blue-500 mr-3 flex-shrink-0" />
@@ -118,7 +122,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <FaEnvelope className="text-blue-500 mr-3 flex-shrink-0" />
-              <span>GROWZYBYTES@gmail.com</span>
+              <span>growzybytesofficial@gmail.com</span>
             </li>
           </ul>
           <Link to="/contact" className="inline-flex items-center mt-6 text-sm font-bold text-white bg-slate-800 hover:bg-blue-600 px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg">
